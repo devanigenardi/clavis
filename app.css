@@ -84,6 +84,7 @@ select {
 @font-face {
   font-family: 'proxima-nova-regular';
   src: url("./fonts/proxima-nova-regular.ttf") format("woff");
+  src: url("./fonts/proxima-nova-regular.otf") format("woff");
   font-weight: 700;
   font-style: normal;
   font-stretch: normal;
@@ -120,87 +121,109 @@ body .wrapper .slab {
 }
 
 body .wrapper .hero {
-  background-image: url("images/clavis-hero-bg.jpg");
   background-size: cover;
   background-position: center center;
-  padding: 30px 0 90px;
+  padding: 0px;
   color: #ffffff;
 }
 
-@media screen and (max-width: 768px) {
-  body .wrapper .hero {
-    padding: 40px 0;
+body .wrapper .hero .hero-video {
+  position: relative;
+}
+
+body .wrapper .hero .hero-video video {
+  position: absolute;
+  background-image: url("images/clavis-hero-bg.jpg");
+  z-index: -1;
+}
+
+@media screen and (min-width: 1100px) {
+  body .wrapper .hero .hero-video video {
+    width: 100%;
   }
 }
 
-body .wrapper .hero div {
-  padding: 0 250px;
+@media screen and (max-width: 1099px) {
+  body .wrapper .hero .hero-video video {
+    margin: auto;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+  }
+}
+
+body .wrapper .hero .hero-video .hero-content {
+  padding: 30px 250px 90px;
 }
 
 @media screen and (max-width: 1024px) {
-  body .wrapper .hero div {
-    padding: 0 50px;
+  body .wrapper .hero .hero-video .hero-content {
+    padding: 30px 50px 90px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  body .wrapper .hero div {
-    padding: 0 30px;
+  body .wrapper .hero .hero-video .hero-content {
+    padding: 40px 30px;
   }
 }
 
-body .wrapper .hero div img {
+body .wrapper .hero .hero-video .hero-content img {
   display: block;
-  margin-bottom: 11%;
+  margin-bottom: 8%;
 }
 
 @media screen and (max-width: 768px) {
-  body .wrapper .hero div img {
+  body .wrapper .hero .hero-video .hero-content img {
     width: 200px;
     height: auto;
-    margin-bottom: 11%;
+    margin-bottom: 8%;
   }
 }
 
-body .wrapper .hero div h2 {
+body .wrapper .hero .hero-video .hero-content h2 {
   font-size: 20px;
   line-height: 24px;
   margin-bottom: 5px;
+  text-transform: uppercase;
 }
 
-body .wrapper .hero div h1 {
+body .wrapper .hero .hero-video .hero-content h1 {
   font-size: 60px;
   line-height: 72px;
   margin-bottom: 50px;
 }
 
 @media screen and (max-width: 768px) {
-  body .wrapper .hero div h1 {
+  body .wrapper .hero .hero-video .hero-content h1 {
     font-size: 45px;
     line-height: 54px;
   }
 }
 
-body .wrapper .hero div p {
+body .wrapper .hero .hero-video .hero-content p {
   max-width: 476px;
   margin-bottom: 30px;
 }
 
 @media screen and (max-width: 768px) {
-  body .wrapper .hero div p {
+  body .wrapper .hero .hero-video .hero-content p {
     max-width: 100%;
   }
 }
 
-body .wrapper .hero div a {
+body .wrapper .hero .hero-video .hero-content a {
   color: #ffffff;
   text-decoration: none;
   font-size: 16px;
   line-height: 19px;
   background-color: #D0AF21;
-  padding: 13px 25px;
+  padding: 13px 44px;
   border-radius: 5px;
   display: inline-block;
+  text-align: center;
+  width: 200px;
 }
 
 body .wrapper .slab-1 {
@@ -251,31 +274,36 @@ body .wrapper .slab-1 .section-container .info-box .link-footer {
   }
 }
 
-body .wrapper .slab-1 .section-container .info-box .link-footer a {
+body .wrapper .slab-1 .section-container .info-box .link-footer span {
   text-align: right;
   padding-right: 11px;
+  position: relative;
+  color: #ffffff;
+  float: right;
+  display: block;
+  font-size: 14px;
+  line-height: 17px;
 }
 
-body .wrapper .slab-1 .section-container .info-box .link-footer a::after {
+body .wrapper .slab-1 .section-container .info-box .link-footer span::after {
   content: '';
   position: absolute;
   height: 11px;
   width: 6px;
   right: 0px;
-  top: 3px;
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
   background-image: url("images/svg/clavis-arrow.svg");
   background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 768px) {
-  body .wrapper .slab-1 .section-container .info-box .link-footer a {
+  body .wrapper .slab-1 .section-container .info-box .link-footer span {
     text-align: left;
     max-width: 190px;
+    float: left;
   }
-}
-
-body .wrapper .slab-1 .section-container .info-box .link-footer a:hover {
-  text-decoration: underline;
 }
 
 body .wrapper .slab-1 .section-container .spacer-box {
